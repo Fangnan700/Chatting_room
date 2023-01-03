@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, minimum-scale=0.5, user-scalable=no">
+    <title>首页</title>
+    <script src="../js/jquery-3.6.3.js"></script>
+    <script src="../js/reconnecting-websocket.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="icon" href="../img/logo.png" sizes="16x16">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+        <div id="title">
+            <img src="../img/logo.png" width="40px" height="40px" style="filter: invert(100)">
+            <span>小黑屋</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: white" data-bs-toggle="modal" data-bs-target="#update_user_info" onclick="query_user_info()">/ 个人信息管理</a>
+                </li>
+            </ul>
+            <span id="online_nums">在线人数： undefined</span>
+            <span id="user_info">欢迎您： undefined</span>
+            <a href="#" id="logout_btn" onclick="logout()">[注销登录]</a>
+        </div>
+    </div>
+</nav>
+
+
+<div id="contents_frame">
+
+    <div id="message_content">
+        <p class="msg">欢迎来到小黑屋！</p>
+        <p class="msg">在这里，你可以畅所欲言，使用<strong class="msg"> @bot </strong>开头还可以与AI机器人 ChatBot 对话，例如：</p>
+        <p class="msg"><strong class="msg">@bot 你好！</strong></p>
+        <p class="msg">稍等一会儿，你就会收到ChatBot的回复啦！</p>
+    </div>
+
+    <div class="row" id="input_frame">
+        <div class="col-10" id="message_input" contenteditable="true"></div>
+        <div class="col-2" id="message_input_btn_frame">
+            <button class="btn btn-secondary" type="button" id="send_msg_btn" onclick="send()">
+                <img src="../img/send.png" width="25px" height="25px" style="filter: invert(100)">
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div class="row" id="foot">
+    <span style="color: white">Copyright &copy;2023 Fang nan</span>
+</div>
+
+
+<!--模态弹框-->
+<div class="modal fade" id="update_user_info" tabindex="-1" aria-labelledby="update_user_info" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">个人信息管理</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div class="mb-3">
+                        <label for="user_id" class="form-label">用户ID</label>
+                        <input type="text" class="form-control" id="user_id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user_name_input" class="form-label">用户名称</label>
+                        <input type="text" class="form-control" id="user_name_input">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user_phone_input" class="form-label">用户手机</label>
+                        <input type="text" class="form-control" id="user_phone_input">
+                    </div>
+                    <div class="mb-3" id="update_password">
+
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" onclick="update_user_info()">修改个人信息</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取 消</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="update_info()">提 交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div></div>
+
+</body>
+<script src="../js/home.js"></script>
+</html>
+

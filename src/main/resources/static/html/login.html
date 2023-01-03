@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>用户登录</title>
+    <script src="../js/jquery-3.6.3.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="icon" href="../img/logo.png" sizes="16x16">
+</head>
+<body>
+
+<div class="row" id="msg_frame">
+
+</div>
+
+<div id="title">
+    <img src="../img/logo.png" width="60px" height="60px">
+    <span>小黑屋</span>
+</div>
+
+<div id="login_main_frame">
+    <div id="sub_title">
+        用户登录
+    </div>
+    <div id="input_frame">
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control login_form" id="phone_input" placeholder="手机号" onfocus="reset_msg()">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control login_form" id="password_input" placeholder="密码" onfocus="reset_msg()">
+            </div>
+        </form>
+        <div class="mb-3" id="btn_group">
+            <button class="btn btn-outline-secondary" id="register_btn" onclick="register()">注 册</button>
+            <button class="btn btn-secondary" id="login_btn" onclick="login_submit()">登 录</button>
+        </div>
+        <div class="row" id="foot">
+            <span>Copyright &copy;2023 Fang nan</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="../js/login.js"></script>
+</html>

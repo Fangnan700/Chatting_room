@@ -1,0 +1,111 @@
+body {
+    /*background: rgba(86,88,105);*/
+    background: #1a1e21;
+    overflow-x: hidden;
+    min-width: 400px;
+}
+
+.msg {
+    color: white;
+}
+
+#title {
+    margin-right: 20px;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+#online_nums {
+    color: white;
+}
+
+#user_info {
+    margin-left: 30px;
+    color: white;
+}
+
+#logout_btn {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+
+#contents_frame {
+    max-width: 1280px;
+    min-width: 400px;
+    height: 700px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#message_content {
+    max-width: 1160px;
+    min-width: 400px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: white solid 1px;
+    border-radius: 10px 10px 10px 10px;
+    overflow-y: auto;
+    color: white;
+}
+
+#input_frame {
+    max-width: 1180px;
+    min-width: 400px;
+    min-height: 40px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+#message_input {
+    min-height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    color: white;
+    border: white solid 1px;
+    border-radius: 10px 0 0 10px;
+    background: #1a1e21;
+}
+
+
+#send_msg_btn{
+    width: 100%;
+    text-align: center;
+    background: #1a1e21;
+    border: white solid 1px;
+    border-radius: 0 10px 10px 0;
+}
+
+
+#foot {
+    text-align: center;
+}
+
+
+/* 滚动槽 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: rgba(0,0,0,0.06);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.08);
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(255,255,255,0.5);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+

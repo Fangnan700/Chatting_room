@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>用户注册</title>
+    <script src="../js/jquery-3.6.3.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/register.css">
+    <link rel="icon" href="../img/logo.png" sizes="16x16">
+</head>
+<body>
+
+<div class="row" id="msg_frame">
+
+</div>
+
+<div id="title">
+    <img src="../img/logo.png" width="60px" height="60px">
+    <span>小黑屋</span>
+</div>
+
+<div id="register_main_frame">
+    <div id="sub_title">
+        用户注册
+    </div>
+    <div id="input_frame">
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control register_form" id="name_input" placeholder="用户名" onfocus="reset_msg()">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control register_form" id="phone_input" placeholder="手机号" onfocus="reset_msg()">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control register_form" id="password_input" placeholder="密码" onfocus="reset_msg()">
+            </div>
+        </form>
+        <div class="mb-3" id="btn_group">
+            <button class="btn btn-outline-secondary" id="reset_btn" onclick="login()">去登录</button>
+            <button class="btn btn-secondary" id="register_btn" onclick="register_submit()">提交注册</button>
+        </div>
+        <div class="row" id="foot">
+            <span>Copyright &copy;2023 Fang nan</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="../js/register.js"></script>
+</html>
