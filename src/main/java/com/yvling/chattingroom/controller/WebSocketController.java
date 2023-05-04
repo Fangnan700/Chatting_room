@@ -122,11 +122,10 @@ public class WebSocketController implements ApplicationRunner {
 
 
 
-
         if(message.length() >= 4) {
             String hint = message.substring(0, 4);
             if(!from_name.equals("system") && hint.equals("@bot")) {
-                String response_msg = ChatBot.send(message.substring(4));
+                String response_msg = ChatBot.send(from_name, message.substring(4));
 
                 JSONObject response_json = new JSONObject();
                 response_json.put("time", System.currentTimeMillis());
@@ -159,7 +158,6 @@ public class WebSocketController implements ApplicationRunner {
                 e.printStackTrace();
             }
         }
-
     }
 
     // 异常时的操作

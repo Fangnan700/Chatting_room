@@ -1,0 +1,80 @@
+html {
+    overflow-x: hidden;
+}
+
+#msg_frame {
+    height: 50px;
+}
+
+.msg {
+    height: 50px;
+    text-align: center;
+}
+
+#title {
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 100px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 100px;
+    text-align: center;
+    font-size: 42px;
+}
+
+#sub_title {
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#register_main_frame {
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 400px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px darkgrey;
+}
+
+#input_frame {
+    max-width: 360px;
+    min-width: 260px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register_form {
+    border-radius: 10px;
+}
+
+#btn_group {
+    margin-top: 30px;
+}
+
+#reset_btn {
+    width: 49%;
+    border-radius: 10px;
+}
+
+#register_btn {
+    width: 49%;
+    border-radius: 10px;
+}
+
+#foot {
+    margin-top: 30px;
+    text-align: center;
+    color: dimgrey;
+}
