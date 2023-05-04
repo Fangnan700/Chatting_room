@@ -13,9 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-
 import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -25,8 +23,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class WebSocketController implements ApplicationRunner {
 
 
-    private static MessageService messageService;
-    private static MessagesDao messagesDao;
+    public static MessageService messageService;
+    public static MessagesDao messagesDao;
     @Autowired
     public void setMessageService(MessageService messageService1) {
         WebSocketController.messageService = messageService1;

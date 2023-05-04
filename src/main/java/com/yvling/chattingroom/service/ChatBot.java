@@ -1,26 +1,30 @@
 package com.yvling.chattingroom.service;
 
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
+import com.yvling.chattingroom.controller.WebSocketController;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import java.io.File;
+import java.io.FileReader;
 import java.util.*;
 
 @Component
 public class ChatBot implements ApplicationRunner {
 
+    private static String key;
     private static RestTemplate restTemplate;
     private static ArrayList<Object> messages;
 
     public static String send(String from, String msg) {
-//
-//        restTemplate = new RestTemplate();
-//        messages = new ArrayList<>();
 
         // 创建消息体
         Map<String, String> u_message = new HashMap<>();
@@ -37,7 +41,7 @@ public class ChatBot implements ApplicationRunner {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add("Authorization", "Bearer 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");
+        headers.add("Authorization", "Bearer " + key);
 
         Map<String, Object> body = new HashMap<>();
 
@@ -59,14 +63,33 @@ public class ChatBot implements ApplicationRunner {
 
             messages.add(a_message);
 
+            String from_name = "Chat_bot";
+            long time = System.currentTimeMillis();
+            try {
+                WebSocketController.messageService.insert_message(from_name, time, content);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             return content;
         } catch (Exception e) {
+            e.printStackTrace();
             return "机器人开小差啦";
         }
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        ClassPathResource key_resource = new ClassPathResource("keys.json");
+        File key_file = key_resource.getFile();
+
+        JSONObject key_obj = JSON.parseObject(new FileReader(key_file));
+        JSONArray keys = (JSONArray) key_obj.get("keys");
+
+        Random random = new Random();
+        int index = random.nextInt(keys.size());
+
+        key = keys.getString(index);
         restTemplate = new RestTemplate();
         messages = new ArrayList<>();
     }
